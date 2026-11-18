@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Velvet Cinema — Pesan Tiket Bioskop Online</title>
+  <meta name="description" content="Pesan tiket bioskop online di Velvet Cinema: pilih film, jadwal tayang, dan kursi favoritmu dalam hitungan detik.">
+  <meta name="theme-color" content="#0a090a">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top vc-navbar" id="mainNavbar" aria-label="Navigasi utama">
+      <div class="container">
+        <a class="navbar-brand vc-brand" href="#hero">
+          <i class="bi bi-film"></i> <span>VELVET <em>CINEMA</em></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="#movies">Film</a></li>
+            <li class="nav-item"><a class="nav-link" href="#how">Cara Pesan</a></li>
+          </ul>
+          <button type="button" class="btn btn-outline-gold btn-history" id="btnHistory"
+                  data-bs-toggle="modal" data-bs-target="#historyModal">
+            <i class="bi bi-ticket-perforated"></i> Pesanan Saya
+            <span class="badge history-badge" id="historyBadge" hidden>0</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow"><span></span> Premium Cinema Experience <span></span></p>
+        <h1 class="hero-title">Nikmati Film dalam<br>Balutan <em>Kemewahan</em></h1>
+        <p class="hero-lead">Pilih film, tentukan jadwal, dan duduk di kursi terbaikmu. Pesan tiket secara online tanpa antre, langsung dari genggaman.</p>
+        <div class="hero-actions">
+          <a href="#movies" class="btn btn-gold btn-lg"><i class="bi bi-play-circle-fill"></i> Pesan Tiket</a>
+          <button type="button" class="btn btn-outline-gold btn-lg" data-bs-toggle="modal" data-bs-target="#historyModal">
+            <i class="bi bi-clock-history"></i> Riwayat Pesanan
+          </button>
+        </div>
+        <ul class="hero-stats">
+          <li><strong id="statMovies">8</strong><span>Film Tayang</span></li>
+          <li><strong>3</strong><span>Studio Premium</span></li>
+          <li><strong>80</strong><span>Kursi / Studio</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ DAFTAR FILM ============ -->
+    <section id="movies" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-red">Now Showing</p>
+          <h2 class="section-title">Sedang Tayang</h2>
+          <div class="ornament" aria-hidden="true"><i class="bi bi-diamond-fill"></i></div>
+          <p class="section-sub">Klik poster film untuk melihat jadwal tayang dan memilih kursi.</p>
+        </div>
+
+        <div class="genre-filter" id="genreFilter" role="group" aria-label="Filter genre film"></div>
+        <p class="result-info" id="resultInfo" aria-live="polite"></p>
+
+        <div class="row g-3 g-md-4" id="movieGrid"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <i class="bi bi-film"></i>
+          <p>Belum ada film untuk genre ini.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARA PESAN ============ -->
+    <section id="how" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-red">Mudah &amp; Cepat</p>
+          <h2 class="section-title">Cara Memesan Tiket</h2>
+          <div class="ornament" aria-hidden="true"><i class="bi bi-diamond-fill"></i></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-6 col-lg-3">
+            <div class="step-card">
+              <span class="step-no">01</span>
+              <i class="bi bi-film"></i>
+              <h3>Pilih Film</h3>
+              <p>Telusuri film dan filter berdasarkan genre favoritmu.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="step-card">
+              <span class="step-no">02</span>
+              <i class="bi bi-calendar-event"></i>
+              <h3>Pilih Jadwal</h3>
+              <p>Tentukan tanggal, jam, dan studio yang paling pas.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="step-card">
+              <span class="step-no">03</span>
+              <i class="bi bi-grid-3x3-gap-fill"></i>
+              <h3>Pilih Kursi</h3>
+              <p>Klik kursi yang kosong, maksimal 6 kursi per pesanan.</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="step-card">
+              <span class="step-no">04</span>
+              <i class="bi bi-receipt"></i>
+              <h3>Terima Struk</h3>
+              <p>Isi data diri dan dapatkan struk pemesananmu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="vc-footer">
+    <div class="container text-center">
+      <a class="navbar-brand vc-brand" href="#hero"><i class="bi bi-film"></i> <span>VELVET <em>CINEMA</em></span></a>
+      <p class="footer-note">Sistem pemesanan tiket bioskop online &middot; Data pemesanan tersimpan di browser kamu (localStorage).</p>
+      <p class="footer-copy">&copy; <span id="year"></span> Velvet Cinema. Seluruh judul film dan poster dalam situs ini adalah fiksi.</p>
+    </div>
+  </footer>
+
+
+  <!-- ============ MODAL: DETAIL FILM & JADWAL ============ -->
+  <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+      <div class="modal-content vc-modal">
+        <div class="modal-header">
+          <p class="modal-eyebrow mb-0"><i class="bi bi-camera-reels"></i> Jadwal Tayang</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body" id="movieModalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL: PILIH KURSI & DATA PEMESAN ============ -->
+  <div class="modal fade" id="seatModal" tabindex="-1" aria-labelledby="seatModalTitle" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable modal-fullscreen-lg-down">
+      <div class="modal-content vc-modal">
+        <div class="modal-header">
+          <div>
+            <p class="modal-eyebrow mb-0"><i class="bi bi-grid-3x3-gap-fill"></i> Pilih Kursi</p>
+            <h5 class="modal-title" id="seatModalTitle">—</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+
+            <!-- Denah kursi -->
+            <div class="col-lg-7">
+              <div class="screen-wrap" aria-hidden="true">
+                <div class="screen"><span>LAYAR</span></div>
+              </div>
+
+              <div class="seat-grid" id="seatGrid" role="group" aria-label="Denah kursi studio"></div>
+
+              <ul class="seat-legend" aria-label="Keterangan warna kursi">
+                <li><span class="seat-sample available"></span> Tersedia</li>
+                <li><span class="seat-sample selected"></span> Dipilih</li>
+                <li><span class="seat-sample occupied"></span> Terisi</li>
+              </ul>
+              <p class="seat-limit-note"><i class="bi bi-info-circle"></i> Maksimal <strong id="maxSeatsLabel">6</strong> kursi per pemesanan.</p>
+            </div>
+
+            <!-- Ringkasan + form -->
+            <div class="col-lg-5">
+              <div class="side-sticky">
+                <aside class="summary-card" aria-live="polite">
+                  <div class="summary-movie">
+                    <img id="sumPoster" src="" alt="" width="64" height="96">
+                    <div>
+                      <span class="genre-tag" id="sumGenre"></span>
+                      <h6 id="sumTitle"></h6>
+                      <small id="sumDuration"></small>
+                    </div>
+                  </div>
+
+                  <dl class="summary-list">
+                    <div><dt>Tanggal</dt><dd id="sumDate">—</dd></div>
+                    <div><dt>Jam</dt><dd id="sumTime">—</dd></div>
+                    <div><dt>Studio</dt><dd id="sumStudio">—</dd></div>
+                    <div><dt>Harga / kursi</dt><dd id="sumPrice">—</dd></div>
+                    <div>
+                      <dt>Kursi <small>(<span id="seatCount">0</span>/<span id="seatMax">6</span>)</small></dt>
+                      <dd><div class="seat-chips" id="sumSeats"></div></dd>
+                    </div>
+                  </dl>
+
+                  <div class="summary-total">
+                    <div>
+                      <span>Total Harga</span>
+                      <small id="sumFormula">0 kursi × Rp 0</small>
+                    </div>
+                    <strong id="totalPrice">Rp 0</strong>
+                  </div>
+                </aside>
+
+                <form id="bookingForm" class="form-card" novalidate>
+                  <h6 class="form-title"><i class="bi bi-person-vcard"></i> Data Pemesan</h6>
+
+                  <div class="mb-3">
+                    <label for="customerName" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Contoh: Budi Santoso" autocomplete="name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="customerEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="customerEmail" name="customerEmail" placeholder="nama@email.com" autocomplete="email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="customerPhone" class="form-label">Nomor HP</label>
+                    <input type="tel" class="form-control" id="customerPhone" name="customerPhone" placeholder="08xxxxxxxxxx" autocomplete="tel" inputmode="tel">
+                  </div>
+
+                  <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-gold btn-lg" id="btnSubmit">
+                      <i class="bi bi-ticket-perforated-fill"></i> Pesan Sekarang
+                    </button>
+                    <button type="button" class="btn btn-link btn-back" id="btnBackToSchedule">
+                      <i class="bi bi-arrow-left"></i> Ganti jadwal
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL: STRUK PEMESANAN ============ -->
+  <div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content vc-modal">
+        <div class="modal-header no-print">
+          <div>
+            <p class="modal-eyebrow mb-0"><i class="bi bi-check-circle-fill"></i> Pemesanan Berhasil</p>
+            <h5 class="modal-title" id="receiptModalTitle">Struk Pemesanan</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body" id="receiptBody"></div>
+        <div class="modal-footer no-print">
+          <button type="button" class="btn btn-outline-gold" id="btnPrint"><i class="bi bi-printer"></i> Cetak</button>
+          <button type="button" class="btn btn-gold" data-bs-dismiss="modal">Selesai</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL: RIWAYAT PESANAN ============ -->
+  <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+      <div class="modal-content vc-modal">
+        <div class="modal-header">
+          <div>
+            <p class="modal-eyebrow mb-0"><i class="bi bi-ticket-perforated"></i> Tersimpan di browser</p>
+            <h5 class="modal-title" id="historyModalTitle">Pesanan Saya</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body" id="historyBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/movies.js"></script>
+  <script src="assets/js/seats.js"></script>
+  <script src="assets/js/booking.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
