@@ -140,9 +140,10 @@ Cinema.Booking = (function ($, U, ST) {
     var created = new Date(b.createdAt).toLocaleString('id-ID', { dateStyle: 'long', timeStyle: 'short' });
 
     return '' +
+    // body ticket struk
       '<div class="ticket">' +
         '<div class="ticket-head">' +
-          '<div class="ticket-brand"><i class="bi bi-film"></i> VELVET CINEMA</div>' +
+          '<div class="ticket-brand"><i class="bi bi-film"></i> CinemaMax </div>' +
           '<div class="ticket-code">Kode Pemesanan<strong>' + e(b.id) + '</strong></div>' +
         '</div>' +
 
