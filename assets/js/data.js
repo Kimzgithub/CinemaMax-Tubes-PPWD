@@ -25,45 +25,45 @@ Cinema.Data = (function (U) {
   /* ---------- FILM ---------- */
   var movies = [
     {
-      id: 1, title: '3726 MDPL', genre: 'Romance', duration: 118, rating: 8.4, age: '17+',
+      id: 1, title: '3726 MDPL', genre: 'Petualangan', duration: 118, rating: 9.0, age: '17+',
       poster: 'assets/img/posters/3726MDPL.jpg',
-      synopsis: 'Seorang detektif senior menerima surat tanpa nama yang membuka kembali kasus lama. Setiap petunjuk membawanya semakin dekat pada kebenaran yang selama ini terkubur di kotanya sendiri.'
+      synopsis: 'mengisahkan perjalanan cinta, luka batin, dan pendewasaan diri antara Rangga Raja dan Andini Hangura dengan latar ketinggian puncak Gunung Rinjani (3.726 meter di atas permukaan laut)'
     },
     {
-      id: 2, title: 'Langit Merah', genre: 'Aksi', duration: 132, rating: 8.1, age: '13+',
-      poster: 'assets/img/posters/langit-merah.svg',
-      synopsis: 'Seorang pilot veteran harus menembus badai dan wilayah musuh untuk menyelamatkan ratusan warga sipil. Waktunya hanya sampai matahari terbenam.'
+      id: 2, title: 'Gak Ada Matinya', genre: 'Comedy', duration: 132, rating: 8.1, age: '13+',
+      poster: 'assets/img/posters/gakadamatinya.jpg',
+      synopsis: 'Film ini menawarkan alur cerita tentang dinamika keluarga yang unik dengan balutan komedi gelap yang segar dan penuh kejutan.'
     },
     {
-      id: 3, title: 'Rumah di Ujung Kabut', genre: 'Horor', duration: 104, rating: 7.6, age: '17+',
-      poster: 'assets/img/posters/rumah-di-ujung-kabut.svg',
-      synopsis: 'Sebuah keluarga muda pindah ke rumah tua di lereng gunung. Saat kabut turun setiap senja, mereka mulai menyadari bahwa mereka tidak sendirian.'
+      id: 3, title: 'People Pleaser', genre: 'Comedy', duration: 104, rating: 7.6, age: '17+',
+      poster: 'assets/img/posters/peoplepleaser.jpg',
+      synopsis: 'Karina, seorang pegawai kantoran yang dikenal sulit menolak permintaan orang lain, harus belajar berkata "tidak" agar bisa hidup lebih bahagia dan tidak selalu mengesampingkan kebutuhan pribadinya.'
     },
     {
-      id: 4, title: 'Kopi & Kamu', genre: 'Romantis', duration: 109, rating: 8.0, age: 'SU',
-      poster: 'assets/img/posters/kopi-dan-kamu.svg',
-      synopsis: 'Barista pemalu bertemu penulis yang selalu memesan kopi yang sama setiap hujan turun. Dari secangkir kopi, tumbuh cerita yang hangat dan tak terduga.'
+      id: 4, title: 'Hamka: Awal Mula Vol. 3', genre: 'Biografi', duration: 109, rating: 8.0, age: 'SU',
+      poster: 'assets/img/posters/hamkavol3.jpg',
+      synopsis: 'Menyoroti perjalanan hidup ulama sekaligus sastrawan besar Indonesia, Buya Hamka, sejak masa mudanya di Maninjau hingga merantau ke Mekkah untuk mencari jati diri.'
     },
     {
-      id: 5, title: 'Galaksi Nusantara', genre: 'Sci-Fi', duration: 141, rating: 8.7, age: '13+',
-      poster: 'assets/img/posters/galaksi-nusantara.svg',
-      synopsis: 'Di tahun 2150, awak kapal antariksa dari Nusantara memulai misi melintasi galaksi untuk menemukan rumah baru bagi umat manusia.'
+      id: 5, title: 'Piye To Kih?', genre: 'Comedy', duration: 141, rating: 8.7, age: '18+',
+      poster: 'assets/img/posters/piyeiki.jpg',
+      synopsis: 'Mukidi ingin membuktikan dirinya pantas menikahi perempuan impiannya, namun ia malah bertemu dengan Sukma, perempuan misterius dari alam berbeda di rumah murah yang baru dibelinya.'
     },
     {
-      id: 6, title: 'Tawa Tanpa Henti', genre: 'Komedi', duration: 98, rating: 7.4, age: '13+',
-      poster: 'assets/img/posters/tawa-tanpa-henti.svg',
-      synopsis: 'Tiga sahabat gagal total mengadakan pernikahan impian di desa terpencil. Satu kesalahan kecil berubah menjadi rentetan kekacauan yang mengundang tawa.'
+      id: 6, title: 'Menang untuk Kalah', genre: 'Keluarga', duration: 98, rating: 7.4, age: '13+',
+      poster: 'assets/img/posters/menanguntukkalah.jpg',
+      synopsis: 'Sebuah drama keluarga emosional yang mengangkat persoalan serius mengenai adiksi judi online dan dampaknya yang mengancam kerukunan serta masa depan sebuah keluarga.'
     },
     {
-      id: 7, title: 'Petualangan Si Kancil', genre: 'Animasi', duration: 95, rating: 8.2, age: 'SU',
-      poster: 'assets/img/posters/petualangan-si-kancil.svg',
-      synopsis: 'Si Kancil yang cerdik harus menyelamatkan hutan dari bendungan raksasa. Dengan akal dan keberanian, ia mengajak seluruh penghuni rimba bersatu.'
+      id: 7, title: 'Sumpah Darah', genre: 'Horor', duration: 95, rating: 8.2, age: '21+',
+      poster: 'assets/img/posters/sumpahdarah.jpg',
+      synopsis: 'Mengisahkan tentang sebuah sumpah terlarang di masa lalu yang kini menuntut balas dan meneror kehidupan keturunan mereka yang masih hidup di masa kini.'
     },
     {
-      id: 8, title: 'Surat dari Senja', genre: 'Drama', duration: 126, rating: 8.5, age: '13+',
-      poster: 'assets/img/posters/surat-dari-senja.svg',
-      synopsis: 'Seorang anak menemukan kumpulan surat yang tak pernah terkirim milik ayahnya. Perjalanan menyusuri pesisir mengungkap cinta, penyesalan, dan pengampunan.'
-    }
+      id: 8, title: 'Focker In-Law', genre: 'Comedy', duration: 126, rating: 8.5, age: '21+',
+      poster: 'assets/img/posters/fockerinlaw.jpg',
+      synopsis: 'Pertemuan dua keluarga besar dengan latar belakang dan budaya yang sangat berbeda memicu berbagai kejadian kocak saat mereka berusaha menyatukan perbedaan demi anak-anak mereka.'
+    },
   ];
 
   /* ---------- STUDIO ---------- */
