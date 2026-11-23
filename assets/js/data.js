@@ -25,8 +25,8 @@ Cinema.Data = (function (U) {
   /* ---------- FILM ---------- */
   var movies = [
     {
-      id: 1, title: 'Bayangan Terakhir', genre: 'Thriller', duration: 118, rating: 8.4, age: '17+',
-      poster: 'assets/img/posters/bayangan-terakhir.svg',
+      id: 1, title: '3726 MDPL', genre: 'Romance', duration: 118, rating: 8.4, age: '17+',
+      poster: 'assets/img/posters/3726MDPL.jpg',
       synopsis: 'Seorang detektif senior menerima surat tanpa nama yang membuka kembali kasus lama. Setiap petunjuk membawanya semakin dekat pada kebenaran yang selama ini terkubur di kotanya sendiri.'
     },
     {
@@ -70,7 +70,7 @@ Cinema.Data = (function (U) {
   var studios = [
     { name: 'Studio 1', type: 'Regular',     price: 45000 },
     { name: 'Studio 2', type: 'Premiere',    price: 60000 },
-    { name: 'Studio 3', type: 'Velvet Gold', price: 90000 }
+    { name: 'Studio 3', type: 'Gold', price: 90000 }
   ];
 
   var SHOWTIMES = ['10:30', '13:00', '15:45', '18:30', '21:15'];
