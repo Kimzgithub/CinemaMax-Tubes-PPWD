@@ -35,6 +35,7 @@ Cinema.Seats = (function ($, U, D, ST) {
 
   function renderGrid() {
     var booked = ST.getBookedSeats(state.schedule.id);
+    // Panggilan dari data.js
     var map = D.getSeatMap(state.schedule.id, booked);
 
     var html = map.map(function (rowData) {

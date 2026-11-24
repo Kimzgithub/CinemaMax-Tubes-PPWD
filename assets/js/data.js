@@ -30,12 +30,12 @@ Cinema.Data = (function (U) {
       synopsis: 'mengisahkan perjalanan cinta, luka batin, dan pendewasaan diri antara Rangga Raja dan Andini Hangura dengan latar ketinggian puncak Gunung Rinjani (3.726 meter di atas permukaan laut)'
     },
     {
-      id: 2, title: 'Gak Ada Matinya', genre: 'Comedy', duration: 132, rating: 8.1, age: '13+',
+      id: 2, title: 'Gak Ada Matinya', genre: 'komedi', duration: 132, rating: 8.1, age: '13+',
       poster: 'assets/img/posters/gakadamatinya.jpg',
       synopsis: 'Film ini menawarkan alur cerita tentang dinamika keluarga yang unik dengan balutan komedi gelap yang segar dan penuh kejutan.'
     },
     {
-      id: 3, title: 'People Pleaser', genre: 'Comedy', duration: 104, rating: 7.6, age: '17+',
+      id: 3, title: 'People Pleaser', genre: 'komedi', duration: 104, rating: 7.6, age: '17+',
       poster: 'assets/img/posters/peoplepleaser.jpg',
       synopsis: 'Karina, seorang pegawai kantoran yang dikenal sulit menolak permintaan orang lain, harus belajar berkata "tidak" agar bisa hidup lebih bahagia dan tidak selalu mengesampingkan kebutuhan pribadinya.'
     },
@@ -45,7 +45,7 @@ Cinema.Data = (function (U) {
       synopsis: 'Menyoroti perjalanan hidup ulama sekaligus sastrawan besar Indonesia, Buya Hamka, sejak masa mudanya di Maninjau hingga merantau ke Mekkah untuk mencari jati diri.'
     },
     {
-      id: 5, title: 'Piye To Kih?', genre: 'Comedy', duration: 141, rating: 8.7, age: '18+',
+      id: 5, title: 'Piye To Kih?', genre: 'komedi', duration: 141, rating: 8.7, age: '18+',
       poster: 'assets/img/posters/piyeiki.jpg',
       synopsis: 'Mukidi ingin membuktikan dirinya pantas menikahi perempuan impiannya, namun ia malah bertemu dengan Sukma, perempuan misterius dari alam berbeda di rumah murah yang baru dibelinya.'
     },
@@ -60,7 +60,7 @@ Cinema.Data = (function (U) {
       synopsis: 'Mengisahkan tentang sebuah sumpah terlarang di masa lalu yang kini menuntut balas dan meneror kehidupan keturunan mereka yang masih hidup di masa kini.'
     },
     {
-      id: 8, title: 'Focker In-Law', genre: 'Comedy', duration: 126, rating: 8.5, age: '21+',
+      id: 8, title: 'Focker In-Law', genre: 'komedi', duration: 126, rating: 8.5, age: '21+',
       poster: 'assets/img/posters/fockerinlaw.jpg',
       synopsis: 'Pertemuan dua keluarga besar dengan latar belakang dan budaya yang sangat berbeda memicu berbagai kejadian kocak saat mereka berusaha menyatukan perbedaan demi anak-anak mereka.'
     },
@@ -83,6 +83,7 @@ Cinema.Data = (function (U) {
     var today = new Date();
     today.setHours(0, 0, 0, 0);
 
+    // var IsWeekend
     movies.forEach(function (movie, i) {
       for (var d = 0; d < cfg.DAYS_AHEAD; d++) {
         var date = new Date(today);
@@ -94,6 +95,7 @@ Cinema.Data = (function (U) {
           return SHOWTIMES[(i + d + k * 2) % SHOWTIMES.length];
         }).sort();
 
+        // schedules.push sebenarnya
         times.forEach(function (time, k) {
           var studio = studios[(i + d + k) % studios.length];
           schedules.push({
@@ -136,6 +138,8 @@ Cinema.Data = (function (U) {
    * @param {string[]} extraOccupied kode kursi yang sudah dipesan (dari localStorage)
    * @returns {Array<{row:string, seats:Array<{id,row,num,status}>}>}
    */
+
+  // akan dipanggil dari seats.js 
   function getSeatMap(scheduleId, extraOccupied) {
     var rand = mulberry32(hashString(scheduleId));
     var extra = extraOccupied || [];
